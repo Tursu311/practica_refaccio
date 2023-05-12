@@ -1,4 +1,3 @@
-import java.util.File;
 import java.util.List;
 import java.util.Scanner;
 
@@ -140,6 +139,53 @@ public class Main {
 
         public String getFullName() {
             return firstName + " " + lastName;
+        }
+    }
+}
+
+//Refactorize the abobe code and add //REFACT: (refactoring type)
+
+//REFACT: Delete unused code import java.util.File;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        //REFACT: Delete unused code String p = "Proves";
+        int opcio;
+        //REFACT: Extract method menuprincipal();
+        menuprincipal();
+        opcio = scan.nextInt();
+        //REFACT: Delete unused code scan.nextLine();
+        switch (opcio) {
+            case 1:
+                calcularmesgran();
+                break;
+            case 2:
+                
+
+
+
+    }
+
+    public menuprincipal() {
+        System.out.println("1. Introduir dos nombres i mostrar el més gran");
+        System.out.println("2. Introduir els coeficients d'una equació de segon grau i mostrar les seves arrels");
+
+    }
+
+    public calcularmesgran() { //RE
+        System.out.println("Introdueix el primer nombre: ");
+        int num1 = scan.nextInt();
+        System.out.println("Introdueix el segon nombre: ");
+        int num2 = scan.nextInt();
+        if (num1 > num2) {
+            System.out.println("El número més gran és: " + num1);
+        } else if (num1 == num2) {
+            System.out.println("Els dos nombres són iguals");
+        } else {
+            System.out.println("El número més gran és: " + num2);
         }
     }
 }
